@@ -3,26 +3,24 @@ using namespace std;
 
 int main() {
     int t;
-    cin >> t;
-    while (t--) {
+    cin>>t;
+    while(t--){
         int n;
-        cin >> n;
-        vector<int> a(n), pos(n + 1);
-
-        for (int i = 0; i < n; i++) {
-            cin >> a[i];
-            pos[a[i]] = i;
+        cin>>n;
+        int a[n];
+        for(int i=0;i<n;i++){
+            cin>>a[i];
         }
+        int count=0;
+        for(int i=0;i<n;i++){
+             if(a[i]%2!=0){
+                count++;
+             }
+       
 
-        bool ok = true;
-        for (int x = 1; x < n; x++) {
-            if ((pos[x] % 2) == (pos[x + 1] % 2)) {
-                ok = false;
-                break;
-            }
         }
-
-        cout << (ok ? "YES\n" : "NO\n");
+        if(count%2!=0)cout<<"NO"<<endl;
+        else cout<<"YES"<<endl;
     }
     return 0;
 }
